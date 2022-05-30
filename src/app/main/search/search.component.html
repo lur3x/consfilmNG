@@ -1,0 +1,28 @@
+<div class="search">
+  <h2 class="text-center">Search Shows</h2>
+  <button
+    mat-flat-button
+    color="primary"
+    class="search-btn"
+    (click)="search(searchStr)"
+  >
+    <mat-icon>search</mat-icon>
+  </button>
+  <mat-form-field class="search-input">
+    <input matInput type="text" placeholder="Search" [(ngModel)]="searchStr" />
+  </mat-form-field>
+  <div class="shows" *ngIf="shows.length; else empty">
+    <div class="shows-item" *ngFor="let item of shows | searchShow: searchStr">
+      <img src="{{ item.image }}" />
+      <div class="shows-text">
+        <a routerLinkActive="active" [routerLink]="['/post', item.id]">{{
+          item.title
+        }}</a>
+        <p>{{ item.description }}</p>
+      </div>
+    </div>
+  </div>
+</div>
+<ng-template #empty
+  ><p class="empty text-center">No shows available</p>
+</ng-template>

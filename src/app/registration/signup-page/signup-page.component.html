@@ -1,0 +1,70 @@
+<div class="form">
+  <h2 class="form-title text-center">Sign Up</h2>
+  <form class="login" [formGroup]="form" (ngSubmit)="registerUser(form.value)">
+    <mat-form-field class="form-field">
+      <input
+        matInput
+        type="text"
+        id="name"
+        placeholder="Username"
+        formControlName="user"
+      />
+    </mat-form-field>
+    <mat-form-field class="form-field">
+      <input
+        matInput
+        type="email"
+        id="email"
+        placeholder="Email"
+        formControlName="email"
+      />
+      <mat-error
+        *ngIf="form.get('email')!.touched && form.get('email')!.invalid"
+      >
+        <mat-error
+          *ngIf="
+            form.controls['email'].hasError('email') &&
+            !form.controls['email'].hasError('required')
+          "
+        >
+          Please enter a valid email address
+        </mat-error>
+        <mat-error *ngIf="form.controls['email'].hasError('required')">
+          Email is <strong>required</strong>
+        </mat-error>
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field class="form-field">
+      <input
+        matInput
+        type="password"
+        id="password"
+        placeholder="Password"
+        formControlName="password"
+      />
+      <mat-error
+        *ngIf="form.get('password')!.touched && form.get('password')!.invalid"
+      >
+        <mat-error *ngIf="form.get('password')!.errors!['required']">
+          Password is <strong>required</strong>
+        </mat-error>
+        <mat-error *ngIf="form.get('password')!.errors!['minlength']">
+          Password must be at least
+          {{ form.get("password")!.errors!["minlength"]["requiredLength"] }}
+          symbols. Current amount:
+          {{ form.get("password")!.errors!["minlength"]["actualLength"] }}
+        </mat-error>
+      </mat-error>
+    </mat-form-field>
+    <button mat-raised-button color="primary" class="form-btn" type="submit">
+      Sign Up
+    </button>
+    <a
+      mat-button
+      [routerLink]="['/login']"
+      routerLinkActive="router-link-active"
+      class="form-link"
+      >Login</a
+    >
+  </form>
+</div>

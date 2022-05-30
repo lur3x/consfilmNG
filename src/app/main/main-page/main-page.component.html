@@ -1,0 +1,13 @@
+<h2 class="text-center">Coming Soon</h2>
+<div class="grid-main">
+  <div *ngFor="let item of items">
+    <div class="main-item text-center">
+      <img src="{{ item.image }}" alt="logo" />
+      <a routerLinkActive="active" [routerLink]="['/post', item.id]"
+        >{{ item.title | uppercase }}, {{ item.year }}</a
+      >
+      <p>{{ item.releaseState }}</p>
+      <p>{{ item.directors }}</p>
+    </div>
+  </div>
+</div>

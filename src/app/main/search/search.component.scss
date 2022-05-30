@@ -1,0 +1,29 @@
+.search {
+  margin: 1rem;
+  max-width: 100%;
+}
+.search-input {
+  width: 90%;
+  margin-left: 1%;
+}
+.search-btn {
+  padding: 0 2%;
+}
+.empty {
+  place-items: center;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-size: 2rem;
+  opacity: 0.5;
+}
+.shows-item {
+  display: flex;
+  width: 50%;
+  margin: 0.5rem;
+}
+.shows-item img {
+  width: 40%;
+  height: 100%;
+}
+.shows-text {
+  margin-left: 1rem;
+}

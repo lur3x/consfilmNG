@@ -1,0 +1,24 @@
+<div *ngIf="show$ | async as show; else loading">
+  <div class="post">
+    <h2 class="text-center">{{ show.title }} ({{ show.year }})</h2>
+    <div class="post-info">
+      <img src="{{ show.image }}" alt="{{ show.title }}" />
+      <div class="post-info-text">
+        <p>Type: {{ show.type }}</p>
+        <p>Runtime: {{ show.runtimeStr }}</p>
+        <p>Directors: {{ show.directors }}</p>
+        <p>Stars: {{ show.stars }}</p>
+        <p>Awards: {{ show.awards }}</p>
+        <p>Plot: {{ show.plot }}</p>
+        <h3>Starring:</h3>
+        <div class="actor-images">
+          <div *ngFor="let image of show.actorList">
+            <img src="{{ image.image }}" alt="{{ image.name }}" />
+            <p class="text-center">{{ image.name }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<ng-template #loading><p>Loading</p></ng-template>

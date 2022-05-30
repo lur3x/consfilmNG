@@ -1,0 +1,24 @@
+.post-info {
+  display: flex;
+  padding: 0 2rem;
+}
+
+.post {
+  padding: 1rem 0;
+}
+.post-info img {
+  width: 40%;
+  height: 40%;
+}
+.post-info-text {
+  margin-left: 1rem;
+}
+.actor-images {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+.actor-images img {
+  width: 10rem;
+  height: 13rem;
+}
