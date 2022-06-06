@@ -20,7 +20,6 @@ import { SignupPageComponent } from './registration/signup-page/signup-page.comp
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ResetPageComponent } from './registration/resetpage/resetpage.component';
 import { SearchPipe } from './main/search.pipe';
-import { ProfileComponent } from './main/profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +32,7 @@ import { ProfileComponent } from './main/profile/profile.component';
     LoginPageComponent,
     SignupPageComponent,
     ResetPageComponent,
-    SearchPipe, ProfileComponent
+    SearchPipe,
   ],
   imports: [
     BrowserModule,

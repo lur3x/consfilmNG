@@ -11,11 +11,7 @@ import { Router } from '@angular/router';
   providedIn: 'root',
 })
 export class AuthService {
-  constructor(
-    public auth: Auth,
-    private database: Database,
-    private router: Router
-  ) {}
+  constructor(public auth: Auth, private database: Database) {}
 
   login(value: any) {
     signInWithEmailAndPassword(this.auth, value.email, value.password)
@@ -25,7 +21,6 @@ export class AuthService {
         update(ref(this.database, 'users/' + user.uid), {
           last_login: date,
         });
-        this.router.navigate(['profile']);
       })
       .catch((error) => {
         const errorCode = error.code;

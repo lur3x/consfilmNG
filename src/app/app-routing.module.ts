@@ -3,7 +3,6 @@ import { RouterModule, Routes } from '@angular/router';
 import { AboutComponent } from './main/about/about.component';
 import { MainPageComponent } from './main/main-page/main-page.component';
 import { PostPageComponent } from './main/post-page/post-page.component';
-import { ProfileComponent } from './main/profile/profile.component';
 import { SearchComponent } from './main/search/search.component';
 import { LoginPageComponent } from './registration/login-page/login-page.component';
 import { ResetPageComponent } from './registration/resetpage/resetpage.component';
@@ -42,9 +41,6 @@ const routes: Routes = [
   {
     path: 'reset',
     component: ResetPageComponent,
-  },{
-    path: 'profile',
-    component: ProfileComponent,
   },
 ];
 
